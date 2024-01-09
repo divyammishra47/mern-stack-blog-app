@@ -62,10 +62,11 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
+    console.log('MongoDB connected successfully');
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     /* ADD DATA ONE TIME */
-    //User.insertMany(users);
-    //Post.insertMany(posts);
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
-  .catch((error) => console.log(`${error} did not connect`));
+  .catch((error) => console.error('MongoDB connection error:', error))
