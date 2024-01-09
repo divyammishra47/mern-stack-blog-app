@@ -35,7 +35,7 @@ const PostWidget = ({
   const primary = palette.primary.main;
 
   const patchLike = async () => {
-    const response = await fetch(`https://react-mern-1x36.onrender.com/posts/${postId}/like`, {
+    const response = await fetch(`https://mern-app-react.onrender.com/posts/${postId}/like`, {
       method: "PATCH",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`https://react-mern-1x36.onrender.com/assets/${picturePath}`}
+          src={`https://mern-app-react.onrender.com/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">

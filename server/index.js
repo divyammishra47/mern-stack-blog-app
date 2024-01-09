@@ -30,7 +30,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors({
-    origin: 'https://react-mern-1x36.onrender.com', // or your frontend's origin
+    origin: 'https://mern-app-react.onrender.com', // or your frontend's origin
   }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
