@@ -23,7 +23,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://mern-app-react.onrender.com/users/${_id}/${friendId}`,
+      `https://react-mern-1x36.onrender.com/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {
