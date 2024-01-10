@@ -56,6 +56,13 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+/* GET HOME PAGE TEST */
+app.get('/', (req, res) => {
+  return res.json({
+    message: 'Welcome to My app'
+  });
+});
+
 /* ROUTES WITH FILES */
 app.post("/auth/register", upload.single("picture"), register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
