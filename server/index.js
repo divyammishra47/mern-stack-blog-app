@@ -29,8 +29,21 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+const corsOptions = {
+  origin: 'https://dreamy-speculoos-c0eaa3.netlify.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://dreamy-speculoos-c0eaa3.netlify.app');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'OPTIONS, POST, GET, PUT, DELETE');
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
 
 /* FILE STORAGE */
 const storage = multer.diskStorage({
