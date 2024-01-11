@@ -39,35 +39,26 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
   return (
     <>
-      {posts.map(
-        ({
-          _id,
-          userId,
-          firstName,
-          lastName,
-          description,
-          location,
-          picturePath,
-          userPicturePath,
-          likes,
-          comments,
-        }) => (
+      {
+      posts.map((entity) => {
+        return (
           <PostWidget
-            key={_id}
-            postId={_id}
-            postUserId={userId}
-            name={`${firstName} ${lastName}`}
-            description={description}
-            location={location}
-            picturePath={picturePath}
-            userPicturePath={userPicturePath}
-            likes={likes}
-            comments={comments}
+            key={entity._id}
+            postId={entity._id}
+            postUserId={entity.userId}
+            name={`${entity.firstName} ${entity.lastName}`}
+            description={entity.description}
+            location={entity.location}
+            picturePath={entity.picturePath}
+            userPicturePath={entity.userPicturePath}
+            likes={entity.likes}
+            comments={entity.comments}
           />
-        )
-      )}
+        );
+      })
+      }
     </>
-  );
+  );   
 };
 
 export default PostsWidget;
