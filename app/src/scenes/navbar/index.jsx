@@ -41,6 +41,12 @@ const Navbar = () => {
 
   const fullName = `${user.firstName} ${user.lastName}`;
 
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    console.log("Searching for: ", searchQuery);
+  };
+
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
@@ -65,8 +71,8 @@ const Navbar = () => {
             gap="3rem"
             padding="0.1rem 1.5rem"
           >
-            <InputBase placeholder="Search..." />
-            <IconButton>
+            <InputBase placeholder="Search..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <IconButton onClick={handleSearch}>
               <Search />
             </IconButton>
           </FlexBetween>
@@ -146,7 +152,7 @@ const Navbar = () => {
             flexDirection="column"
             justifyContent="center"
             alignItems="center"
-            gap="3rem"
+            gap="1rem"
           >
             <IconButton
               onClick={() => dispatch(setMode())}
