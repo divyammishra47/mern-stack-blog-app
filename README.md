@@ -19,6 +19,7 @@ This repository contains a social media app built using the MERN stack.
   4.  redux toolkit (state management)
   5.  redux persist (to store in local storage)
   6.  react drop zone (for image uploads)
+
   BACKEND:
   1.  Node js (runtime environment)
   2.  express js (framework)
